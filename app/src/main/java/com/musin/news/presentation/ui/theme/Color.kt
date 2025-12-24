@@ -1,4 +1,4 @@
-package com.musin.news.ui.theme
+package com.musin.news.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
