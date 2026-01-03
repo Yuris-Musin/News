@@ -53,7 +53,7 @@ import com.musin.news.presentation.ui.theme.CustomIcons
 import com.musin.news.presentation.utils.formatDate
 
 @Composable
-fun SubscriptionScreen(
+fun SubscriptionsScreen(
     modifier: Modifier = Modifier,
     onNavigateToSettings: () -> Unit,
     viewModel: SubscriptionsViewModel = hiltViewModel()
