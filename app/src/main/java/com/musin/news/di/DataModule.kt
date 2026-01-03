@@ -7,7 +7,9 @@ import com.musin.news.data.local.NewsDao
 import com.musin.news.data.local.NewsDatabase
 import com.musin.news.data.remote.NewsApiService
 import com.musin.news.data.repository.NewsRepositoryImpl
+import com.musin.news.data.repository.SettingsRepositoryImpl
 import com.musin.news.domain.repository.NewsRepository
+import com.musin.news.domain.repository.SettingsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -25,6 +27,12 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 interface DataModule {
+
+    @Binds
+    @Singleton
+    fun bindsSettingsRepository(
+        impl: SettingsRepositoryImpl
+    ): SettingsRepository
 
     @Binds
     @Singleton
