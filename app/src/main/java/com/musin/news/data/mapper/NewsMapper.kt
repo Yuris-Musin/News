@@ -3,6 +3,7 @@ package com.musin.news.data.mapper
 import com.musin.news.data.local.ArticleDbModel
 import com.musin.news.data.remote.NewsResponseDto
 import com.musin.news.domain.entity.Article
+import com.musin.news.domain.entity.Interval
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -18,6 +19,10 @@ fun NewsResponseDto.toDbModels(topic: String): List<ArticleDbModel> {
             publishedAt = it.publishedAt.toTimestamp()
         )
     }
+}
+
+fun Int.toInterval(): Interval {
+    return Interval.entries.first { it.minutes == this }
 }
 
 fun List<ArticleDbModel>.toEntities(): List<Article> {
